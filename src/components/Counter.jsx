@@ -1,12 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { increment } from "../redux/actions/actions";
-import { decrement } from "../redux/actions/actions";
-import { addValue } from "../redux/actions/actions";
-import { decrementValue } from "../redux/actions/actions";
+
 import { useState } from "react";
+import { addValue, decrement, decrementValue, increment } from "../redux/reducer/counter-reducer";
 
 function Counter() {
-    const counter = useSelector((state)=>state.count)
+    const counter = useSelector((state)=>state.counter.count)
     const dispatcher = useDispatch()
     const [numValue, setNumValue] = useState('')
     const handleChange = (e) => {
